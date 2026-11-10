@@ -1,4 +1,6 @@
-
+<div align="center">
+  <img alt="BiMamba-Seg遥感分割框架示意图" src="https://github.com/user-attachments/assets/f1bf34c9-36a4-435a-b0cc-e08b8a120220" width=500 />
+</div>
 <h1 align="center">BiMamba-Seg: Bidirectional Cross-Modal Modulation and Dual-Axis Mamba for Open-Vocabulary Remote Sensing Segmentation</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10-blue.svg" />
@@ -6,7 +8,6 @@
   <img src="https://img.shields.io/badge/CUDA-11.8-green.svg" />
   <img src="https://img.shields.io/badge/Detectron2-supported-orange.svg" />
 </p>
-
 
 ## 🔍 Overview
 
@@ -142,6 +143,16 @@ sh run.sh configs/vitb_384_DLRSD.yaml 4 ./output ""
 ```
 > [!IMPORTANT]
 > Before evaluation, make sure that the JSON paths in eval.sh have been correctly configured.
+
+## 🙏 Acknowledgement
+This project builds upon excellent prior work:
+
+- [CAT-Seg](https://github.com/KU-CVLAB/CAT-Seg) - Cost aggregation framework
+- [Detectron2](https://github.com/facebookresearch/detectron2) - Detection framework
+- [CLIP](https://github.com/openai/CLIP) - Vision-language pretraining
+- [Pi-Seg](https://github.com/LiBingyu01/Pi-Seg) - Open-vocabulary RS baseline
+
+We sincerely thank the authors of previous open-vocabulary segmentation methods for their valuable research and publicly available implementations.
 
 ## 📚 Citation
 
