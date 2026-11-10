@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   <img alt="BiMamba-Seg遥感分割框架示意图" src="https://github.com/user-attachments/assets/f1bf34c9-36a4-435a-b0cc-e08b8a120220" width=500 />
 </div>
@@ -166,41 +165,3 @@ If you find this work useful in your research, please consider citing our paper:
 `BiMamba-Seg: Bidirectional Cross-modal Modulation and Dual-Axis Mamba for Open-Vocabulary Remote Sensing Segmentation.`
 
 **Full bibliographic information will be added upon publication.**
-=======
-## Requirements
-
-- Linux or macOS with Python ≥ 3.8
-- PyTorch ≥ 1.13 and matching torchvision
-- CUDA 11.7 or higher (for GPU training)
-- Detectron2
-## Installation
-
-```
-# Create conda environment
-conda create -n bimamba-seg python=3.10
-conda activate bimamba-seg
-
-# Install PyTorch (adjust CUDA version as needed)
-python -m pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 \
-  --index-url https://download.pytorch.org/whl/cu118
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Install Detectron2
-python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
-```
-
-## Dataset Preparation
-
-1. Download all datasets from https://huggingface.co/datasets/kkk2026/OVRSISBenchtest , and extract them to the same folder.
-2. Modify the files starting with 'register' under `code_final/cat_seg/data/datasets`, and change the `root` variable at the end of the file to the folder where the dataset is located.
-3. Modify eval.sh and replace it with the correct JSON path.
-4. Modify the `TRAIN_CLASS_JSON` and `TEST_CLASS_JSON` in `configs/vitb_384_DLRSD.yaml` so that they point to the correct `DLRSD.json`.
-
-## Train & Eval
-
-```
-sh run.sh $config $gpus $output $opts
-```
->>>>>>> 6ffdf2a (initial files)
