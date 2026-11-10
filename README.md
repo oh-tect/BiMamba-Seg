@@ -8,21 +8,19 @@
 </p>
 
 
-## Overview
+## 🔍 Overview
 
 **BiMamba-Seg** is an efficient framework for Open-Vocabulary Remote Sensing Image Semantic Segmentation (OVRSIS). It addresses insufficient vision-language interaction during cost aggregation and limited long-range spatial context modeling in high-resolution remote sensing imagery.
 
 Built upon a cost-aggregation-based segmentation framework, BiMamba-Seg introduces two major components:
 
-- Stage-aware Bidirectional Cross-modal Modulation (SBCM): Dynamically adapts visual and textual guidance according to their respective roles in different aggregation stages.
+- **Stage-aware Bidirectional Cross-modal Modulation (SBCM)**: Dynamically adapts visual and textual guidance according to their respective roles in different aggregation stages.
 
-- Dual-axis Serpentine Mamba Aggregation (DSMA): Captures long-range spatial dependencies through recurrent state-space modeling along complementary horizontal and vertical directions.
-
-## Method Overview
+- **Dual-axis Serpentine Mamba Aggregation (DSMA)**: Captures long-range spatial dependencies through recurrent state-space modeling along complementary horizontal and vertical directions.
 
 <img width="3249" height="1750" alt="main_page-0001" src="https://github.com/user-attachments/assets/8777ea93-e2e8-4d69-bf24-0df756fd4507" />
 
-## Key Components
+## 🔑 Key Components
 
 ### 1. Stage-aware Bidirectional Cross-modal Modulation (SBCM)
 
@@ -36,7 +34,9 @@ SBCM consists of two complementary modules:
 
 DSMA performs efficient long-range spatial modeling through horizontal and vertical serpentine scanning. It employs chunk-wise traversal and recurrent state propagation across scanning segments and neighboring spatial lines, facilitating contextual information exchange without explicit pairwise spatial attention.
 
-## Requirements
+##  🏁 Get Started
+
+### 🛠️ Requirements
 
 - Python ≥ 3.8 (Python 3.10 recommended)
 
@@ -56,7 +56,7 @@ The following configuration is used in the installation example:
 
 - CUDA 11.8
 
-## Installation
+### 📦 Installation
 
 **1. Create a Conda environment**
 
@@ -77,16 +77,20 @@ pip install -r requirements.txt
 ```
 python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'
 ```
-Make sure that the CUDA environment and PyTorch installation are compatible when compiling Detectron2.
+> [!IMPORTANT]
+> Make sure that the CUDA environment and PyTorch installation are compatible when compiling Detectron2.
 
-## Dataset Preparation
+### 🗂️ Dataset Preparation
 
 **1. Download Datasets**
+
 Download the datasets from the following Hugging Face repository:
  https://huggingface.co/datasets/kkk2026/OVRSISBenchtest
 
 Extract all downloaded datasets into a common parent directory.
+
 **2. Configure Dataset Paths**
+
 Navigate to:
 ```
 code_final/cat_seg/data/datasets/
@@ -95,12 +99,12 @@ Modify the dataset registration files whose names start with `register`.
 
 At the end of each registration file, locate the root variable and replace it with the actual dataset directory.
 
-For example:
+**For example:**
 
 ```
 root = "/path/to/your/datasets"
 ```
-Make sure that the specified paths correctly correspond to your extracted dataset folders.
+> Make sure that the specified paths correctly correspond to your extracted dataset folders.
 
 **3. Configure Evaluation Paths**
 
@@ -113,15 +117,16 @@ Open `configs/vitb_384_DLRSD.yaml`, Update the following parameters to point to 
 TRAIN_CLASS_JSON: "/path/to/DLRSD.json"
 TEST_CLASS_JSON: "/path/to/DLRSD.json"
 ```
-Ensure that both paths point to the corresponding category JSON file in your dataset setup.
+> [!IMPORTANT]
+> Ensure that both paths point to the corresponding category JSON file in your dataset setup.
 
-## Training and Evaluation
+### 🚀 Training and Evaluation
 
 The main execution script is:
 ```
 sh run.sh $config $gpus $output $opts
 ```
-The arguments are:
+⚙️ The arguments are:
 
 | Argument | Description                                |
 |:---------|:-------------------------------------------|
@@ -131,14 +136,14 @@ The arguments are:
 | `opts`   | Additional configuration options           |
 
 
-> **For example, to use the DLRSD configuration with four GPUs:**
-> ```
-> sh run.sh configs/vitb_384_DLRSD.yaml 4 ./output ""
-> ```
+**For example, to use the DLRSD configuration with four GPUs:**
+```
+sh run.sh configs/vitb_384_DLRSD.yaml 4 ./output ""
+```
+> [!IMPORTANT]
+> Before evaluation, make sure that the JSON paths in eval.sh have been correctly configured.
 
-Before evaluation, make sure that the JSON paths in eval.sh have been correctly configured.
-
-## Citation
+## 📚 Citation
 
 If you find this work useful in your research, please consider citing our paper:
 
