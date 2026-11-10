@@ -144,6 +144,10 @@ sh run.sh configs/vitb_384_DLRSD.yaml 4 ./output ""
 > [!IMPORTANT]
 > Before evaluation, make sure that the JSON paths in eval.sh have been correctly configured.
 
+### 🧠 Pretrained Models
+
+Pretrained model weights and corresponding configuration files will be publicly released upon publication of this paper.
+
 ## 🙏 Acknowledgement
 This project builds upon excellent prior work:
 
